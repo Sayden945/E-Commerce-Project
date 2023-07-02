@@ -1,0 +1,102 @@
+﻿@page
+@model E_Commerce_Project.Pages.CartModel
+@{
+}
+
+<section id="cart" class="container-fluid">
+	<div>
+		<h1>Shopping Cart</h1>
+	</div>
+	<div id="main-wrapper">
+		<div class="left-container">
+			<ol>
+				<li>
+					<div class="fr-pannel">
+						<div class="inner-pannel">
+							<div class="panel-contents">
+								<div class="product-card-list">
+									<div class="image-section">
+										<div class="product-img">
+											<div><img src="img/products/n1.jpg" /></div>
+										</div>
+									</div>
+
+									<div class="product-container">
+										<div class="content-wrapper">
+											<div class="info">
+												<dl class="list-inline-info">Product Name: Button Up Shirt</dl>
+												<dl class="list-inline-info">Product ID: HE8302A</dl>
+												<dl class="list-inline-info">Size: M</dl>
+												<div class="product-price">$38.90</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="fr-pannel">
+						<div class="inner-pannel">
+							<div class="panel-contents">
+								<div class="product-card-list">
+									<div class="image-section">
+										<div class="product-img">
+											<div><img src="img/products/n1.jpg" /></div>
+										</div>
+									</div>
+
+									<div class="product-container">
+										<div class="content-wrapper">
+											<div class="info">
+												<dl class="list-inline-info">Product Name: Button Up Shirt</dl>
+												<dl class="list-inline-info">Product ID: HE8302A</dl>
+												<dl class="list-inline-info">Size: M</dl>
+												<div class="product-price">$38.90</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ol>
+		</div>
+
+		<div class="right-container">
+			<div class="order-summary">
+				<div class="order-text">
+					<span>Order Summary:</span>
+					<span>|x items</span>
+				</div>
+				<div class="d-flex mb-2">
+					<table>
+						<tbody>
+							<tr class="">
+								<td class="">Item subtotal</td>
+								<td class=""><span>$XXX</span></td>
+							</tr>
+							<tr>
+								<th>Subtotal</th>
+								<th><span>$XXXX</span></th>
+							</tr>
+						</tbody>
+						<tfoot>
+						<th>Order Total:</th>
+						<th><span>$1000</span></th>
+						</tfoot>
+					</table>
+				</div>
+			</div>
+			<div class="coupon">
+				<form><input type="text" placeholder="coupon" /></form>
+			</div>
+			<div class="checkout-card">
+				<button>Continue Shopping</button>
+				<button>Checkout</button>
+			</div>
+		</div>
+	</div>
+</section>
