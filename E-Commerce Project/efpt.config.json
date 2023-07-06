@@ -1,0 +1,81 @@
+﻿{
+   "CodeGenerationMode": 2,
+   "ContextClassName": "masterContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": "Models",
+   "PreserveCasingWithRegex": true,
+   "ProjectRootNamespace": "E_Commerce_Project",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "Name": "[dbo].[cart_item]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[discount]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[order_details]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[order_items]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[payment_details]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[product]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[product_category]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[product_inventory]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[shopping_session]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[user]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[user_address]",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": "aydensurface\\ecom.master.dbo",
+   "UncountableWords": null,
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": false,
+   "UseDateOnlyTimeOnly": false,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSpatial": false,
+   "UseT4": false
+}
