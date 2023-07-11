@@ -5,19 +5,19 @@ using System.Collections.Generic;
 
 namespace E_Commerce_Project.Models
 {
-    public partial class Discount
-    {
-        public Discount()
-        {
-            Product = new HashSet<Product>();
-        }
+	public class Discount
+	{
+		public Discount()
+		{
+			Product = new HashSet<Product>();
+		}
 
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public decimal DiscountPercent { get; set; }
-        public byte Active { get; set; }
+		public int Id { get; set; }
+		public string Name { get; set; }
+		public string Description { get; set; }
+		public decimal DiscountPercent { get; set; }
+		public byte Active { get; set; }
 
-        public virtual ICollection<Product> Product { get; set; }
-    }
+		public virtual ICollection<Product> Product { get; set; }
+	}
 }

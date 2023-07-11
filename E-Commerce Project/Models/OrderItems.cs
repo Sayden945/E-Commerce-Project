@@ -5,14 +5,14 @@ using System.Collections.Generic;
 
 namespace E_Commerce_Project.Models
 {
-    public partial class OrderItems
-    {
-        public int Id { get; set; }
-        public int OrderId { get; set; }
-        public int ProductId { get; set; }
-        public int Quantity { get; set; }
+	public class OrderItems
+	{
+		public int Id { get; set; }
+		public int OrderId { get; set; }
+		public int ProductId { get; set; }
+		public int Quantity { get; set; }
 
-        public virtual OrderDetails Order { get; set; }
-        public virtual Product Product { get; set; }
-    }
+		public virtual OrderDetails Order { get; set; }
+		public virtual Product Product { get; set; }
+	}
 }

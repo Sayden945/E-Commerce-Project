@@ -23,7 +23,9 @@
 		<div class="signup-container">
 			<h1>Create an account</h1>
 			<p>Sign up today for exclusive discounts, order history, and a faster checkout experience</p>
-			<button>Create an account</button>
+			<button asp-area="Identity" asp-page="/Account/Register">Create an account</button>
 		</div>
 	</div>
+
+	<partial name="_LoginPartial" />
 </section>

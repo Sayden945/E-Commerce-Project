@@ -1,4 +1,5 @@
 using E_Commerce_Project.Data;
+using E_Commerce_Project.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,8 +15,10 @@ internal class Program
             options.UseSqlServer(connectionString));
         builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-        builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+        builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = false)
             .AddEntityFrameworkStores<ApplicationDbContext>();
+
+
         builder.Services.AddRazorPages();
 
         var app = builder.Build();
@@ -45,3 +48,4 @@ internal class Program
         app.Run();
     }
 }
+

@@ -5,19 +5,19 @@ using System.Collections.Generic;
 
 namespace E_Commerce_Project.Models
 {
-    public partial class PaymentDetails
-    {
-        public PaymentDetails()
-        {
-            OrderDetails = new HashSet<OrderDetails>();
-        }
+	public class PaymentDetails
+	{
+		public PaymentDetails()
+		{
+			OrderDetails = new HashSet<OrderDetails>();
+		}
 
-        public int Id { get; set; }
-        public int OrderId { get; set; }
-        public decimal Amount { get; set; }
-        public string Status { get; set; }
+		public int Id { get; set; }
+		public int OrderId { get; set; }
+		public decimal Amount { get; set; }
+		public string Status { get; set; }
 
-        public virtual OrderDetails Order { get; set; }
-        public virtual ICollection<OrderDetails> OrderDetails { get; set; }
-    }
+		public virtual OrderDetails Order { get; set; }
+		public virtual ICollection<OrderDetails> OrderDetails { get; set; }
+	}
 }
