@@ -4,26 +4,19 @@ using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 
-namespace E_Commerce_Project.Models
+namespace E_Commerce_Project.Models;
+
+public partial class User : IdentityUser
 {
-	public class User : IdentityUser
-	{
-		public User()
-		{
-			CartItem = new HashSet<CartItem>();
-			OrderDetails = new HashSet<OrderDetails>();
-			ShoppingSession = new HashSet<ShoppingSession>();
-			UserAddress = new HashSet<UserAddress>();
-		}
+	public string FirstName { get; set; }
 
+	public string LastName { get; set; }
 
-		public string FirstName { get; set; }
-		public string LastName { get; set; }
-		public DateTime Created { get; set; }
+	public DateTime Created { get; set; }
 
-		public virtual ICollection<CartItem> CartItem { get; set; }
-		public virtual ICollection<OrderDetails> OrderDetails { get; set; }
-		public virtual ICollection<ShoppingSession> ShoppingSession { get; set; }
-		public virtual ICollection<UserAddress> UserAddress { get; set; }
-	}
+	public virtual ICollection<OrderDetails> OrderDetails { get; set; } = new List<OrderDetails>();
+
+	public virtual ICollection<ShoppingSession> ShoppingSession { get; set; } = new List<ShoppingSession>();
+
+	public virtual ICollection<UserAddress> UserAddress { get; set; } = new List<UserAddress>();
 }

@@ -5,7 +5,7 @@
     <title>@ViewData["Title"] - Sayd</title>
 
 	<meta name="author" content="Ayden Smith" />
-	<link rel="shortcut icon" href="img/logo.jpg" type="image/x-icon" sizes="16x16 32x32" />
+	<link rel="shortcut icon" href="~/img/logo.jpg" type="image/x-icon" sizes="16x16 32x32" />
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 	<script src="https://kit.fontawesome.com/d68da1cb3a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
@@ -25,14 +25,14 @@
 				<i id="bar" class="fa-solid fa-bars"></i>
 			</div>
 			<div class="logo">
-				<a asp-page="Index"><img src="img/logo.jpg" class="logo-size" /></a>
+				<a asp-page="Index"><img src="~/img/logo.jpg" class="logo-size" /></a>
 			</div>
 
 			<div>
 				<ul id="navbar">
-					<li><a class="active" asp-page="Index">Home</a></li>
-					<li><a asp-area="" asp-page="About">About</a></li>
-					<li><a asp-area="" asp-page="Contact">Contact</a></li>
+					<li><a class="active" asp-page="/Index">Home</a></li>
+					<li><a asp-area="" asp-page="/About">About</a></li>
+					<li><a asp-area="" asp-page="/Contact">Contact</a></li>
 					<div class="form-container">
 						<input type="text" name="text" class="input" placeholder="Search Products" />
 						<button class="search__btn">
@@ -43,10 +43,10 @@
 						</button>
 					</div>
 					<li>
-						<a asp-area="" asp-page="Cart"><i class="fa-solid fa-bag-shopping"></i></a>
+						<a asp-area="Cart" asp-page="/Checkout"><i class="fa-solid fa-bag-shopping"></i></a>
 					</li>
 					<li>
-						<a asp-area="" asp-page="Account"><i class="fa-solid fa-user"></i></a>
+						<a asp-area="Admin" asp-page="/Index"><i class="fa-solid fa-user"></i></a>
 					</li>
 					<a id="close"><i class="fa-solid fa-xmark"></i></a>
 				</ul>
@@ -106,8 +106,8 @@
 				<p>Available on App Store or Google Play</p>
 				<div class="badges">
 					<div class="introwrap small-12 medium-10 large-8 small-centered columns badges">
-						<a href="" class="badge1"><img src="img/pay/ap1.svg" alt="Download on the App Store" /></a>
-						<a href="" class="badge2"><img src="img/pay/ap2.png" alt="Get it on Google Play" /></a>
+						<a href="" class="badge1"><img src="~/img/pay/ap1.svg" alt="Download on the App Store" /></a>
+						<a href="" class="badge2"><img src="~/img/pay/ap2.png" alt="Get it on Google Play" /></a>
 					</div>
 				</div>
 				<p><strong>Secure Payment Gateways</strong></p>

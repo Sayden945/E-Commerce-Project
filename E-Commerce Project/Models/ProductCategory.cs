@@ -3,19 +3,15 @@
 using System;
 using System.Collections.Generic;
 
-namespace E_Commerce_Project.Models
+namespace E_Commerce_Project.Models;
+
+public partial class ProductCategory
 {
-	public class ProductCategory
-	{
-		public ProductCategory()
-		{
-			Product = new HashSet<Product>();
-		}
+    public int Id { get; set; }
 
-		public int Id { get; set; }
-		public string Name { get; set; }
-		public string Description { get; set; }
+    public string Name { get; set; }
 
-		public virtual ICollection<Product> Product { get; set; }
-	}
+    public string Description { get; set; }
+
+    public virtual ICollection<Product> Product { get; set; } = new List<Product>();
 }

@@ -1,4 +1,5 @@
 ﻿@page
+@using E_Commerce_Project.Models;
 @model E_Commerce_Project.Areas.CartModel
 @{
 }
@@ -17,7 +18,7 @@
 								<div class="product-card-list">
 									<div class="image-section">
 										<div class="product-img">
-											<div><img src="img/products/n1.jpg" /></div>
+											<div><img src="~/img/products/n1.jpg" /></div>
 										</div>
 									</div>
 
@@ -36,32 +37,7 @@
 						</div>
 					</div>
 				</li>
-				<li>
-					<div class="fr-pannel">
-						<div class="inner-pannel">
-							<div class="panel-contents">
-								<div class="product-card-list">
-									<div class="image-section">
-										<div class="product-img">
-											<div><img src="img/products/n1.jpg" /></div>
-										</div>
-									</div>
 
-									<div class="product-container">
-										<div class="content-wrapper">
-											<div class="info">
-												<dl class="list-inline-info">Product Name: Button Up Shirt</dl>
-												<dl class="list-inline-info">Product ID: HE8302A</dl>
-												<dl class="list-inline-info">Size: M</dl>
-												<div class="product-price">$38.90</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</li>
 			</ol>
 		</div>
 
@@ -83,11 +59,14 @@
 								<th><span>$XXXX</span></th>
 							</tr>
 						</tbody>
+
 						<tfoot>
-						<th>Order Total:</th>
-						<th><span>$1000</span></th>
-						</tfoot>
+							<tr>
+								<th>Order Total:</th>
+								<th><span>$1000</span></th>
+							</tr>
 					</table>
+
 				</div>
 			</div>
 			<div class="coupon">
