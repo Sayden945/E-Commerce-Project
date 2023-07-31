@@ -1,0 +1,38 @@
+﻿@page
+@model E_Commerce_Project.Areas.Shop.Pages.IndexModel
+
+@{
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+
+    <!-- Foreach item in product list, print product-->
+    @foreach (var item in Model.Product)
+    {
+        <div class="product-container">
+
+            <div class="product">
+                @Html.DisplayFor(modelItem => item.Image)
+                <h3>
+                    <strong> @Html.DisplayFor(modelItem => item.Name)</strong>
+                </h3>
+
+                <p>@Html.DisplayFor(modelItem => item.Description)</p>
+
+                <h3>@Html.DisplayFor(modelItem => item.Price)</h3>
+                <a href="cart.html"><i class="fa-solid fa-cart-shopping" style="color: #d65d5d"></i></a>
+            </div>
+
+        </div>
+    }
+
+</body>
+</html>

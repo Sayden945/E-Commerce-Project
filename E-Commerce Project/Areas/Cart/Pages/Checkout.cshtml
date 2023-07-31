@@ -1,7 +1,8 @@
 ﻿@page
-@using E_Commerce_Project.Models;
-@model E_Commerce_Project.Areas.CartModel
+@model E_Commerce_Project.Areas.Cart.Pages.CheckoutModel
+
 @{
+    ViewData["Title"] = "Checkout";
 }
 
 <section id="cart" class="container-fluid">
@@ -9,73 +10,116 @@
 		<h1>Shopping Cart</h1>
 	</div>
 	<div id="main-wrapper">
-		<div class="left-container">
-			<ol>
-				<li>
-					<div class="fr-pannel">
-						<div class="inner-pannel">
-							<div class="panel-contents">
-								<div class="product-card-list">
-									<div class="image-section">
-										<div class="product-img">
-											<div><img src="~/img/products/n1.jpg" /></div>
-										</div>
-									</div>
 
-									<div class="product-container">
-										<div class="content-wrapper">
-											<div class="info">
-												<dl class="list-inline-info">Product Name: Button Up Shirt</dl>
-												<dl class="list-inline-info">Product ID: HE8302A</dl>
-												<dl class="list-inline-info">Size: M</dl>
-												<div class="product-price">$38.90</div>
+			<div class="left-container">
+			@if (Model.ShoppingSession != null)
+			{
+				<ol>
+					@foreach (var item in Model.ShoppingSession.CartItem)
+					{
+						<li>
+							<div class="fr-pannel">
+								<div class="inner-pannel">
+									<div class="panel-contents">
+										<div class="product-card-list">
+											<div class="image-section">
+												<div class="product-img">
+													<div><img src="~/img/products/n1.jpg" /></div>
+												</div>
+											</div>
+
+											<div class="product-container">
+												<div class="content-wrapper">
+													<div class="info">
+														<dl class="list-inline-info">Product Name:
+															@Html.DisplayNameFor(model => model.ShoppingSession.Total)
+															</dl>
+														<dl class="list-inline-info">Product ID: HE8302A</dl>
+														<dl class="list-inline-info">Size: M</dl>
+														<div class="product-price">$38.90</div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
+						</li>
+					}
+				</ol>
+			}
+			else
+			{
+				<p>
+					There's nothing in your cart, <a><strong>Shop now!</strong></a>
+				</P>
+			}
+		</div>
+
+			<div class="right-container">
+				<div class="order-summary">
+					<div class="order-text">
+						<span>Order Summary:</span>
+						<span>|x items</span>
 					</div>
-				</li>
+					<div class="d-flex mb-2">
+						<table>
+							<tbody>
+								<tr class="">
+									<td class="">Item subtotal</td>
+									<td class=""><span>$XXX</span></td>
+								</tr>
+								<tr>
+									<th>Subtotal</th>
+									<th><span>$XXXX</span></th>
+								</tr>
+							</tbody>
 
-			</ol>
-		</div>
+							<tfoot>
+								<tr>
+									<th>Order Total:</th>
+									<th><span>$1000</span></th>
+								</tr>
+						</table>
 
-		<div class="right-container">
-			<div class="order-summary">
-				<div class="order-text">
-					<span>Order Summary:</span>
-					<span>|x items</span>
+					</div>
 				</div>
-				<div class="d-flex mb-2">
-					<table>
-						<tbody>
-							<tr class="">
-								<td class="">Item subtotal</td>
-								<td class=""><span>$XXX</span></td>
-							</tr>
-							<tr>
-								<th>Subtotal</th>
-								<th><span>$XXXX</span></th>
-							</tr>
-						</tbody>
-
-						<tfoot>
-							<tr>
-								<th>Order Total:</th>
-								<th><span>$1000</span></th>
-							</tr>
-					</table>
-
+				<div class="coupon">
+					<form><input type="text" placeholder="coupon" /></form>
+				</div>
+				<div class="checkout-card">
+					<button>Continue Shopping</button>
+					<button>Checkout</button>
 				</div>
 			</div>
-			<div class="coupon">
-				<form><input type="text" placeholder="coupon" /></form>
-			</div>
-			<div class="checkout-card">
-				<button>Continue Shopping</button>
-				<button>Checkout</button>
-			</div>
-		</div>
 	</div>
 </section>
+
+<div>
+	<h4>ShoppingSession</h4>
+	<hr />
+	<dl class="row">
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.ShoppingSession.Total)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.ShoppingSession.Total)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.ShoppingSession.Created)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.ShoppingSession.Created)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.ShoppingSession.User)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.ShoppingSession.User.Id)
+		</dd>
+	</dl>
+</div>
+<div>
+	<a asp-page="./Edit" asp-route-id="@Model.ShoppingSession?.Id">Edit</a> |
+	<a asp-page="./Index">Back to List</a>
+</div>

@@ -11,12 +11,16 @@ internal class Program
 
         // Add services to the container.
         var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
         builder.Services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(connectionString));
         builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
         builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = false)
             .AddEntityFrameworkStores<ApplicationDbContext>();
+
+        //Use authentication providers
+
 
 
         builder.Services.AddRazorPages();
@@ -42,6 +46,8 @@ internal class Program
 
         app.UseAuthentication();
         app.UseAuthorization();
+
+
 
         app.MapRazorPages();
 

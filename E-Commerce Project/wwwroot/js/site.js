@@ -7,14 +7,20 @@ const close = document.getElementById("close");
 const nav = document.getElementById("navbar");
 
 if (burger) {
-	burger.addEventListener("click", () => {
-		nav.classList.add("active");
-	});
+    burger.addEventListener("click", () => {
+        nav.classList.add("active");
+    });
 }
 
 if (close) {
-	close.addEventListener("click", () => {
-		nav.classList.remove("active");
-	});
+    close.addEventListener("click", () => {
+        nav.classList.remove("active");
+    });
 }
 
+//Search
+const search = document.querySelector("search__btn");
+
+function searchReDir() {
+
+}

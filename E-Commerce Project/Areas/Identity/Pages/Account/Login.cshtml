@@ -4,9 +4,7 @@
     ViewData["Title"] = "Log in";
 }
 
-<h1>@ViewData["Title"]</h1>
-
-<section id="account">
+<section id="account-container">
     <div id="main-wrapper">
         <div class="login-container">
             <div class="email-password">
@@ -42,48 +40,55 @@
                     </div>
                 </form>
             </div>
+
+            <div>
+                <section>
+                    <h3>Login with social media</h3>
+                    <hr />
+                    @{
+                        if ((Model.ExternalLogins?.Count ?? 0) == 0)
+                        {
+                            <div>
+                                <p>
+                                    There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">
+                                        article
+                                        about setting up this ASP.NET application to support logging in via external services
+                                    </a>.
+                                </p>
+                            </div>
+                        }
+                        else
+                        {
+                            <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                                <div>
+                                    <p>
+                                        @foreach (var provider in Model.ExternalLogins!)
+                                        {
+                                            <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                        }
+                                    </p>
+                                </div>
+                            </form>
+                        }
+                    }
+                </section>
+            </div>
         </div>
 
         <div class="signup-container">
             <h1>Create an account</h1>
             <p>Sign up today for exclusive discounts, order history, and a faster checkout experience</p>
-            <button asp-area="Identity" asp-page="/Account/Register">Create an account</button>
+            <button>
+                <a asp-area="Identity" asp-page="/Account/Register">Sign Up</a>
+            </button>
         </div>
+
     </div>
+
+
 
 </section>
 
-
-    <div>
-        <section>
-            <h3>Use another service to log in.</h3>
-            <hr />
-            @{
-                if ((Model.ExternalLogins?.Count ?? 0) == 0)
-                {
-                    <div>
-                        <p>
-                            There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article
-                            about setting up this ASP.NET application to support logging in via external services</a>.
-                        </p>
-                    </div>
-                }
-                else
-                {
-                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
-                        <div>
-                            <p>
-                                @foreach (var provider in Model.ExternalLogins!)
-                                {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
-                                }
-                            </p>
-                        </div>
-                    </form>
-                }
-            }
-        </section>
-    </div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
